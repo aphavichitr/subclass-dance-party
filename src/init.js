@@ -26,6 +26,9 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
+    $(".blinkydancer").mouseover(function(event) {
+      $(this).removeClass("blinkydancer");
+    });
   });
 
   $('.addBouncyButton').on('click', function(event) {   
@@ -58,9 +61,8 @@ $(document).ready(function() {
 
   $('.addLineUpButton').on('click', function(event) {   
     for (var x = 0; x < window.dancers.length; x++) {
-      window.dancers[x].lineUp();      
+      window.dancers[x].notline = false; 
+      window.dancers[x].lineUp(); 
     }
   });
 });
-
-

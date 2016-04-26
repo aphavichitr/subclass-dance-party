@@ -24,7 +24,7 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
-.dancer{
+.blinkydancer{
   /*border:10px solid red;*/
   width:100px;
   height:100px;
@@ -43,9 +43,7 @@ body, a:link, a:visited, a:active{
   background-image: url("beyonce.gif");
   background-size: 100px 100px;
   display: block;
-
 }
-
 
 .fadedancer{
  width:100px;
@@ -55,5 +53,4 @@ body, a:link, a:visited, a:active{
   background-image: url("wiz.gif");
   background-size: 100px 100px;
   display: block;
-
 }
