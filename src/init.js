@@ -57,6 +57,32 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
+
+    for (var x=0; x<window.dancers.length; x++){
+        for (var i =1; i<window.dancers.length; i++){
+            var a = Math.pow(window.dancers[x].top - window.dancers[i].top,2);
+            console.log('1: ' + window.dancers[x].top);
+            console.log('2: ' + window.dancers[i].top);
+            var b = Math.pow(window.dancers[x].left - window.dancers[i].left,2);
+            console.log('1: ' + window.dancers[x].left);
+            console.log('2: ' + window.dancers[i].left);
+            if (Math.sqrt(a + b) < 100 && Math.sqrt(a + b) > 0) {
+                console.log(Math.sqrt(a +  b));
+                console.log('touching');
+                //$(window.dancers[i].$node).removeClass("blinkydancer");
+                //window.dancers[i].$node.removeClass("fadedancer");
+                // console.log(window.dancers[i].$node.css.top);
+                window.dancers[x].touching = false;
+                //window.dancers[x].$node.removeClass('fadedancer');
+                //window.dancers[i].$node.removeClass('fadedancer');
+                window.dancers[i].$node.animate({
+                    height: '200px',
+                    width: '200px'
+                });
+            }
+        }
+    }
+
   });
 
   $('.addLineUpButton').on('click', function(event) {   
@@ -65,4 +91,7 @@ $(document).ready(function() {
       window.dancers[x].lineUp(); 
     }
   });
+
+
+  
 });

@@ -4,6 +4,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.left = left;
   this.top = top;
   this.notline = true;
+  this.touching = true;
   // use jQuery to create an HTML <span> tag
   this.$node = $('<span class="dancer"></span>');
 

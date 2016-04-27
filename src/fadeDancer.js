@@ -7,6 +7,7 @@ makeFadeDancer.prototype = Object.create(makeDancer.prototype);
 makeFadeDancer.prototype.constructor = makeFadeDancer;
 makeFadeDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
-
-  this.$node.fadeToggle(1000);
+  if (this.touching) {
+    this.$node.fadeToggle(400);  
+  }
 };
